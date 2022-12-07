@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>innerHTML</title>
+</head>
+<body>
+    <ul id="martins-lista">
+        <li>
+            hårdkodad titel
+            <button class="remove-button">ta bort</button>
+
+        </li>
+        <li>
+            hårdkodad titel 2
+            <button class="remove-button">ta bort</button>
+        </li>
+    </ul>
+    <script src=""></script>
+    <script>
+        let titel1 = 'första titeln från javascript'
+        let titel2 = 'andra titeln från javascript'
+
+
+        document.getElementById("martins-lista").innerHTML = 
+        `
+            <li>
+                ${titel1}
+                <button class="remove-button"> ta bort</button>
+            </li>
+            <li>
+                ${titel2}
+                <button class="remove-button">ta bort</button>
+            </li>
+        `;
+        
+        let allaTaBortKnappar = document.getElementsByClassName("remove-button");
+        console.log('allaTaBortKnappar', allaTaBortKnappar)
+
+        for (let i = 0; i < allaTaBortKnappar.length; i++) {
+            allaTaBortKnappar[i].addEventListener("click", taBortMig);
+        }
+
+        function taBortMig (event) {
+            console.log('event.target', event.target);
+            event.target.remove()
+            // event.target.parentElement.remove()
+        }
+    </script>
+</body>
+</html>

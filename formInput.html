@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Input</title>
+</head>
+
+<body>
+    <form id="myForm">
+        <label>Mat:<input id="mat"></label>
+        <input id="martin-input" type="submit">
+    </form>
+    <script>
+        function martinsFunktion(event) {
+            event.preventDefault() // Gör så sidan inte laddas om när användaren trycker på submit
+            console.log(document.getElementById("mat").value); // loggar ut värdet i input rutan
+        }
+
+        document.getElementById("myForm").addEventListener("submit", martinsFunktion); //kopplar ihop formulärets submit knapp med funktionen martinsFunktion
+    </script>
+</body>
+
+</html>

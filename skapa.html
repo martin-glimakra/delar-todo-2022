@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skapa</title>
+</head>
+
+<body>
+    <div id="martins-lista">
+        <p>hårdkodad</p>
+    </div>
+    <button id="martins-knapp">Kör skapa-funktionen</button>
+    <script>
+        function mark() {
+            console.log("mark funktionen körs")
+        }
+
+        function skapa() {
+            const markButton = document.createElement("button");
+            const markText = document.createTextNode('markera');
+            markButton.appendChild(markText);
+            markButton.addEventListener("click", mark);
+            
+            const pNode = document.createElement("p");
+            const textnode = document.createTextNode("dynamisk");
+            pNode.appendChild(textnode);
+            pNode.appendChild(markButton);
+
+            document.getElementById("martins-lista").appendChild(pNode);
+        }
+
+        document.getElementById("martins-knapp").addEventListener("click", skapa)
+    </script>
+</body>
+
+</html>

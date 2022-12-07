@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>event target</title>
+</head>
+
+<body>
+    <button class="martins-knappar">Martins första knapp</button>
+    <button class="martins-knappar">Martins andra knapp</button>
+
+    <script>
+        function martinsFunktion(event) {
+            console.log(event.target) //loggar ut HTML knappen som är kopplad till den här funktionen. Den ger olika resultat beroende på vilken knapp som klickas på.
+        }
+
+        let allaKnappar = document.getElementsByClassName("martins-knappar")
+        console.log(allaKnappar)
+
+        for (let index = 0; index < allaKnappar.length; index++) {
+            allaKnappar[index].addEventListener("click", martinsFunktion)
+        }
+    </script>
+</body>
+
+</html>
